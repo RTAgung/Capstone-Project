@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/side_md"
+    android:layout_marginRight="@dimen/side_md"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="4dp"
+    app:cardMaxElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_item_poster"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/box_color_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_item_original_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/side_lg"
+            android:layout_marginTop="@dimen/side_lgr"
+            android:layout_marginEnd="@dimen/side_lg"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textSize="@dimen/text_lg"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_poster"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Original Title" />
+
+        <TextView
+            android:id="@+id/tv_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/side_lg"
+            android:layout_marginTop="@dimen/side_sm"
+            android:layout_marginEnd="@dimen/side_lg"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:minLines="1"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_original_title"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tv_item_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/side_sm"
+            android:layout_marginEnd="@dimen/side_sm"
+            android:layout_marginBottom="@dimen/side_sm"
+            android:gravity="end"
+            android:textSize="@dimen/text_md"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_star"
+            app:layout_constraintEnd_toStartOf="@+id/iv_item_star"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_star"
+            tools:text="6.8" />
+
+        <ImageView
+            android:id="@+id/iv_item_star"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="@dimen/side_lg"
+            android:layout_marginBottom="@dimen/side_lgr"
+            android:src="@drawable/ic_baseline_stars_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

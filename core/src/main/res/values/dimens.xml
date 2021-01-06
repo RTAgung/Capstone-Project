@@ -1,0 +1,15 @@
+<resources>
+    <dimen name="side_smr">2dp</dimen>
+    <dimen name="side_sm">4dp</dimen>
+    <dimen name="side_md">8dp</dimen>
+    <dimen name="side_lg">12dp</dimen>
+    <dimen name="side_lgr">16dp</dimen>
+
+    <dimen name="text_h1">26sp</dimen>
+    <dimen name="text_h2">22sp</dimen>
+    <dimen name="text_lgr">18sp</dimen>
+    <dimen name="text_lg">16sp</dimen>
+    <dimen name="text_md">14sp</dimen>
+    <dimen name="text_sm">12sp</dimen>
+    <dimen name="text_smr">10sp</dimen>
+</resources>
