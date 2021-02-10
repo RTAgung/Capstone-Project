@@ -25,9 +25,6 @@ android {
 
         buildConfigField("String", "API_KEY", apikeyProperties['API_KEY'])
     }
-    lintOptions {
-        abortOnError false
-    }
     buildTypes {
         debug {
             buildConfigField("String", "API_KEY", apikeyProperties['API_KEY'])
