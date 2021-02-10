@@ -14,9 +14,9 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$legacySupportVersion"
 
     //testing
-    testImplementation "junit:junit:$junitVersion"
+    testImplementation "junit:junit:4.13.1"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
 
     //koin
     implementation "org.koin:koin-core:$koinVersion"
