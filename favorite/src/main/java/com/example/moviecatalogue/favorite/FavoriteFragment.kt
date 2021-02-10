@@ -32,11 +32,17 @@ class FavoriteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         loadKoinModules(favoriteModule)
 
         if (activity != null) {
-            val movieAdapter = MovieAdapter(itemClickCallback)
+            val movieAdapter = MovieAdapter(object : MovieAdapter.ItemClickCallback{
+                override fun onItemClicked(data: Movie) {
+                    val bundle = Bundle()
+                    bundle.putParcelable(DetailActivity.EXTRA_MOVIE, data)
+                    view.findNavController()
+                        .navigate(R.id.action_navigation_favorite_to_detailActivity, bundle)
+                }
+            })
 
             favoriteViewModel.favorite.observe(viewLifecycleOwner, { movie ->
                 movieAdapter.setMovieList(movie)
@@ -48,16 +54,6 @@ class FavoriteFragment : Fragment() {
                 setHasFixedSize(true)
                 adapter = movieAdapter
             }
-        }
-    }
-
-
-    private val itemClickCallback = object : MovieAdapter.ItemClickCallback {
-        override fun onItemClicked(data: Movie) {
-            val bundle = Bundle()
-            bundle.putParcelable(DetailActivity.EXTRA_MOVIE, data)
-            view?.findNavController()
-                ?.navigate(R.id.action_navigation_favorite_to_detailActivity, bundle)
         }
     }
 }
