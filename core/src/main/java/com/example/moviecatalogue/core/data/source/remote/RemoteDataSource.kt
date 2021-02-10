@@ -17,7 +17,8 @@ class RemoteDataSource(private val apiService: ApiService) {
             try {
                 val response = apiService.getAllMovie()
                 if (response.results != null) {
-                    val data = response.results as List<ResultsItem>
+
+                    val data = response.results.filterNotNull()
                     emit(ApiResponse.Success(data))
                 } else {
                     emit(ApiResponse.Empty)
@@ -34,7 +35,7 @@ class RemoteDataSource(private val apiService: ApiService) {
             try {
                 val response = apiService.getAllMovie(query)
                 if (response.results != null) {
-                    val data = response.results as List<ResultsItem>
+                    val data = response.results.filterNotNull()
                     emit(ApiResponse.Success(data))
                 } else {
                     emit(ApiResponse.Empty)

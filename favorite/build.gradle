@@ -43,5 +43,6 @@ dependencies {
     implementation project(":app")
     implementation project(":core")
 
+    //noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }

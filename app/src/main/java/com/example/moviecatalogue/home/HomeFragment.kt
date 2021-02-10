@@ -2,6 +2,7 @@ package com.example.moviecatalogue.home
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.fragment.app.Fragment
@@ -109,7 +110,7 @@ class HomeFragment : Fragment() {
                     if (p0.isNotEmpty())
                         homeViewModel.setSearchQuery(p0.toString())
                     else
-                        Handler().postDelayed({ observeMovie() }, 500)
+                        Handler(Looper.getMainLooper()).postDelayed({ observeMovie() }, 650)
                 }
             }
 

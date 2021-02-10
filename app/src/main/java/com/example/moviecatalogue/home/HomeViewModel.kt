@@ -9,28 +9,6 @@ import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.*
 
 class HomeViewModel(private val movieUseCase: MovieUseCase) : ViewModel() {
-
-//    private var movie: LiveData<Resource<List<Movie>>>? = null
-//
-//    @ExperimentalCoroutinesApi
-//    @FlowPreview
-//    fun getMovie(): LiveData<Resource<List<Movie>>>? {
-//        if (movie == null) loadMovie(null)
-//        return movie
-//    }
-//
-//    @FlowPreview
-//    @ExperimentalCoroutinesApi
-//    fun loadMovie(query: String?) {
-//        movie = null
-//        if (query == null) {
-//            movie = movieUseCase.getAllMovie().asLiveData()
-//        } else {
-//            setSearchQuery(query)
-//            movie = search
-//        }
-//    }
-
     val movie = movieUseCase.getAllMovie().asLiveData()
 
     @ExperimentalCoroutinesApi

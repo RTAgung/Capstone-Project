@@ -18,6 +18,5 @@ data class MovieEntity(
     @ColumnInfo(name = "voteAverage") var voteAverage: Double? = null,
     @ColumnInfo(name = "voteCount") var voteCount: Int? = null,
     @ColumnInfo(name = "posterPath") var posterPath: String? = null,
-    @ColumnInfo(name = "backdropPath") var backdropPath: String? = null,
-//    @ColumnInfo(name = "genres") var genres: String? = null
+    @ColumnInfo(name = "backdropPath") var backdropPath: String? = null
 )

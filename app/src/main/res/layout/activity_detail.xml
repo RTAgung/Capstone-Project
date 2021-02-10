@@ -132,21 +132,6 @@
             app:layout_constraintTop_toBottomOf="@+id/separator_line"
             tools:text="EN" />
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/tv_genres"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginStart="@dimen/side_lgr"-->
-        <!--            android:layout_marginTop="@dimen/side_lg"-->
-        <!--            android:layout_marginEnd="@dimen/side_lgr"-->
-        <!--            android:gravity="start"-->
-        <!--            android:textSize="@dimen/text_sm"-->
-        <!--            android:textStyle="italic"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/tv_tagline"-->
-        <!--            tools:text="Action, Horror, Comedy" />-->
-
         <View
             android:id="@+id/separator_line2"
             android:layout_width="0dp"
