@@ -78,14 +78,6 @@ public *;
 *** rewind();
 }
 
-# test
--keep class * extends androidx.fragment.app.Fragment{}
--keep class * extends android.support.v4.app.Fragment{}
--keepnames class androidx.navigation.fragment.NavHostFragment
--keep class com.example.moviecatalogue.favorite.FavoriteFragment
--keepnames class com.example.moviecatalogue.favorite.FavoriteFragment
--keepnames class * extends android.os.Parcelable
--keepnames class * extends java.io.Serializable
 
 # Uncomment for DexGuard only
 #-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
@@ -94,3 +86,8 @@ public *;
 ##---------------Begin: proguard configuration for RxJava ----------
 # Uncomment if you use RxJava
 #-dontwarn java.util.concurrent.Flow*
+
+
+# navigation component
+-keepnames class * extends android.os.Parcelable
+-keepnames class * extends java.io.Serializable
