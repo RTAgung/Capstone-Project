@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
@@ -33,6 +34,7 @@ class DetailActivity : AppCompatActivity() {
         detailViewModel.movie = movie
 
         supportActionBar?.title = movie.originalTitle
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         populateView(movie)
     }
@@ -52,10 +54,13 @@ class DetailActivity : AppCompatActivity() {
             android.R.id.home -> finish()
             R.id.action_favorite -> {
                 Timber.d("Clicked on favorite button in detail")
-                if (stateBoolean)
+                if (stateBoolean) {
                     detailViewModel.deleteFavorite()
-                else
+                    Toast.makeText(this, "this movie deleted from favorite", Toast.LENGTH_SHORT).show()
+                } else {
                     detailViewModel.insertFavorite()
+                    Toast.makeText(this, "this movie inserted to favorite", Toast.LENGTH_SHORT).show()
+                }
             }
         }
         return super.onOptionsItemSelected(item)
@@ -63,7 +68,7 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        finish()
+        finishAfterTransition()
     }
 
     @SuppressLint("SetTextI18n")

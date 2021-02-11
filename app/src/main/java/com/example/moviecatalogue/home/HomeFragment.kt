@@ -26,7 +26,8 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModel()
 
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var movieAdapter: MovieAdapter
 
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         Timber.d("Start Fragment")
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -57,6 +58,11 @@ class HomeFragment : Fragment() {
                 adapter = movieAdapter
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     @ExperimentalCoroutinesApi
@@ -128,24 +134,24 @@ class HomeFragment : Fragment() {
     private fun showLoading() {
         with(binding.content) {
             progressBar.visibility = View.VISIBLE
-            tvError.visibility = View.GONE
-            tvEmpty.visibility = View.GONE
+            viewError.root.visibility = View.GONE
+            viewEmpty.root.visibility = View.GONE
         }
     }
 
     private fun showError() {
         with(binding.content) {
             progressBar.visibility = View.GONE
-            tvError.visibility = View.VISIBLE
-            tvEmpty.visibility = View.GONE
+            viewError.root.visibility = View.VISIBLE
+            viewEmpty.root.visibility = View.GONE
         }
     }
 
     private fun showSuccess(empty: Boolean) {
         with(binding.content) {
             progressBar.visibility = View.GONE
-            tvError.visibility = View.GONE
-            tvEmpty.visibility = if (empty) View.VISIBLE else View.GONE
+            viewError.root.visibility = View.GONE
+            viewEmpty.root.visibility = if (empty) View.VISIBLE else View.GONE
         }
     }
 }

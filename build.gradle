@@ -36,24 +36,46 @@ ext {
     coreVersion = '1.3.2'
     constraintLayoutVersion = '2.0.4'
 
+    // test
     junitVersion = '4.13.1'
     androidxJunitVersion = '1.1.2'
     legacySupportVersion = '1.0.0'
     espressoVersion = '3.3.0'
 
+    // ui
     materialVersion = '1.2.1'
     navigationVersion = '2.3.1'
     recyclerViewVersion = '1.1.0'
     glideVersion = '4.11.0'
+    lottieVersion = "3.4.1"
 
     archLifecycleVersion = '2.2.0'
 
+    // retrofit
     retrofitVersion = '2.9.0'
     okhttp3LoggingVersion = '5.0.0-alpha.2'
+
+    // room
     roomVersion = '2.2.6'
 
+    // coroutine
     coroutinesVersion = '1.3.9'
     lifecycleVersion = "2.2.0"
 
+    // koin
     koinVersion = "2.1.6"
+
+    // leak canary
+    leakCanaryVersion = "2.4"
+
+    // encryption
+    sqlCipherVersion = "4.4.0"
+    sqliteVersion = "2.1.0"
+
+    // firebase
+    firebaseAnalyticsVersion = "18.0.2"
+    firebaseCrashlyticsVersion = "17.3.1"
+
+    // timber
+    timberVersion = "4.7.1"
 }

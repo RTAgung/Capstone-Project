@@ -20,9 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".detail.DetailActivity"
-            android:launchMode="singleInstance"
-            android:parentActivityName=".MainActivity" />
+            android:name=".detail.DetailActivity" />
     </application>
 
 </manifest>
