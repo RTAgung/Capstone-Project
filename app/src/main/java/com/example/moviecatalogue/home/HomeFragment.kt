@@ -17,6 +17,7 @@ import com.example.moviecatalogue.core.domain.model.Movie
 import com.example.moviecatalogue.core.ui.MovieAdapter
 import com.example.moviecatalogue.databinding.FragmentHomeBinding
 import com.example.moviecatalogue.detail.DetailActivity
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -91,6 +92,7 @@ class HomeFragment : Fragment() {
 
     private val itemClickCallback = object : MovieAdapter.ItemClickCallback {
         override fun onItemClicked(data: Movie) {
+            FirebaseCrashlytics.getInstance().log("Clicked on movie list in home")
             val bundle = Bundle()
             bundle.putParcelable(DetailActivity.EXTRA_MOVIE, data)
             view?.findNavController()
@@ -107,6 +109,7 @@ class HomeFragment : Fragment() {
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if (p0 != null) {
+                    FirebaseCrashlytics.getInstance().log("Search movie: $p0")
                     if (p0.isNotEmpty())
                         homeViewModel.setSearchQuery(p0.toString())
                     else

@@ -11,6 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.moviecatalogue.R
 import com.example.moviecatalogue.core.domain.model.Movie
 import com.example.moviecatalogue.databinding.ActivityDetailBinding
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailActivity : AppCompatActivity() {
@@ -49,6 +50,7 @@ class DetailActivity : AppCompatActivity() {
         when (item.itemId) {
             android.R.id.home -> finish()
             R.id.action_favorite -> {
+                FirebaseCrashlytics.getInstance().log("Clicked on favorite button in detail")
                 if (stateBoolean)
                     detailViewModel.deleteFavorite()
                 else

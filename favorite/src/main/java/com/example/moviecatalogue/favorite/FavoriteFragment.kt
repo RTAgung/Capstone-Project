@@ -13,6 +13,7 @@ import com.example.moviecatalogue.core.ui.MovieAdapter
 import com.example.moviecatalogue.detail.DetailActivity
 import com.example.moviecatalogue.favorite.databinding.FragmentFavoriteBinding
 import com.example.moviecatalogue.favorite.di.favoriteModule
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
@@ -37,6 +38,8 @@ class FavoriteFragment : Fragment() {
         if (activity != null) {
             val movieAdapter = MovieAdapter(object : MovieAdapter.ItemClickCallback{
                 override fun onItemClicked(data: Movie) {
+                    FirebaseCrashlytics.getInstance().log("Clicked on movie list in favorite")
+
                     val bundle = Bundle()
                     bundle.putParcelable(DetailActivity.EXTRA_MOVIE, data)
                     view.findNavController()
