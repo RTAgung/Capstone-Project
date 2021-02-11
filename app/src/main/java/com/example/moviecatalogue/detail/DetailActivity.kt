@@ -1,18 +1,18 @@
 package com.example.moviecatalogue.detail
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.moviecatalogue.R
 import com.example.moviecatalogue.core.domain.model.Movie
 import com.example.moviecatalogue.databinding.ActivityDetailBinding
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import org.koin.android.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 class DetailActivity : AppCompatActivity() {
 
@@ -27,6 +27,7 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Timber.d("Start Activity")
 
         val movie = intent.getParcelableExtra<Movie>(EXTRA_MOVIE) as Movie
         detailViewModel.movie = movie
@@ -50,7 +51,7 @@ class DetailActivity : AppCompatActivity() {
         when (item.itemId) {
             android.R.id.home -> finish()
             R.id.action_favorite -> {
-                FirebaseCrashlytics.getInstance().log("Clicked on favorite button in detail")
+                Timber.d("Clicked on favorite button in detail")
                 if (stateBoolean)
                     detailViewModel.deleteFavorite()
                 else

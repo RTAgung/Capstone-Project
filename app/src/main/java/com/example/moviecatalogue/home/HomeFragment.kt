@@ -5,10 +5,10 @@ import android.os.Handler
 import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviecatalogue.R
@@ -17,10 +17,10 @@ import com.example.moviecatalogue.core.domain.model.Movie
 import com.example.moviecatalogue.core.ui.MovieAdapter
 import com.example.moviecatalogue.databinding.FragmentHomeBinding
 import com.example.moviecatalogue.detail.DetailActivity
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import org.koin.android.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 class HomeFragment : Fragment() {
 
@@ -34,6 +34,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        Timber.d("Start Fragment")
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -62,6 +63,7 @@ class HomeFragment : Fragment() {
     @FlowPreview
     private fun observeSearch() {
         homeViewModel.search.observe(viewLifecycleOwner, { movie ->
+            Timber.d("Observe search")
             if (movie != null) {
                 when (movie) {
                     is Resource.Loading -> showLoading()
@@ -77,6 +79,7 @@ class HomeFragment : Fragment() {
 
     private fun observeMovie() {
         homeViewModel.movie.observe(viewLifecycleOwner, { movie ->
+            Timber.d("Observe movie")
             if (movie != null) {
                 when (movie) {
                     is Resource.Loading -> showLoading()
@@ -92,7 +95,7 @@ class HomeFragment : Fragment() {
 
     private val itemClickCallback = object : MovieAdapter.ItemClickCallback {
         override fun onItemClicked(data: Movie) {
-            FirebaseCrashlytics.getInstance().log("Clicked on movie list in home")
+            Timber.d("Clicked on movie list in home")
             val bundle = Bundle()
             bundle.putParcelable(DetailActivity.EXTRA_MOVIE, data)
             view?.findNavController()
@@ -109,7 +112,7 @@ class HomeFragment : Fragment() {
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if (p0 != null) {
-                    FirebaseCrashlytics.getInstance().log("Search movie: $p0")
+                    Timber.d("Search movie: $p0")
                     if (p0.isNotEmpty())
                         homeViewModel.setSearchQuery(p0.toString())
                     else
