@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "294237926974",
+    "project_id": "capstone-project-170d1",
+    "storage_bucket": "capstone-project-170d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294237926974:android:40fdde1ac3816fb620436f",
+        "android_client_info": {
+          "package_name": "com.example.moviecatalogue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294237926974-vr41h7i2ka0vhjkc0rkqpsc8rem41r4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0e059jpnLRpiKzsNkm_aVPYn7FgSA_AY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294237926974-vr41h7i2ka0vhjkc0rkqpsc8rem41r4d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
