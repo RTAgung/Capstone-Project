@@ -4,10 +4,11 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+//        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath 'com.android.tools.build:gradle:4.2.1'
         //noinspection DifferentKotlinGradleVersion
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
@@ -21,7 +22,8 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+//        jcenter()
+        mavenCentral()
     }
 }
 
@@ -63,7 +65,7 @@ ext {
     lifecycleVersion = "2.2.0"
 
     // koin
-    koinVersion = "2.1.6"
+    koinVersion = "2.2.3"
 
     // leak canary
     leakCanaryVersion = "2.4"

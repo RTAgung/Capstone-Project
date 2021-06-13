@@ -20,9 +20,9 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
 
     //koin
-    implementation "org.koin:koin-core:$koinVersion"
-    implementation "org.koin:koin-android:$koinVersion"
-    implementation "org.koin:koin-android-viewmodel:$koinVersion"
+    implementation "io.insert-koin:koin-core:$koinVersion"
+    implementation "io.insert-koin:koin-android:$koinVersion"
+    implementation "io.insert-koin:koin-android-viewmodel:$koinVersion"
 
     //leak canary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
